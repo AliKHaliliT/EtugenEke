@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Authentication Successful</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/styles/userAction.css">
+    <!-- Assets -->
+    <script src="/static/utils/tokenExtractor.js"></script>
+    <script src="/static/utils/addressExtractor.js"></script>
+    <script src="/static/utils/redirectTo.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="text-center">
+            <h1 class="mb-4">Authentication Successful</h1>
+            <!-- Animated checkmark here -->
+            <div>
+              <iframe src="/static/components/checkMark.html/" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+            </div>
+            <p>Redirecting...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script to listen for animation completion -->
+    <script src="/static/utils/animationCompleteEventListener.js"></script>
+  </body>
+</html>
