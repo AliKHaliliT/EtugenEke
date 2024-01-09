@@ -18,6 +18,13 @@ from assets.routes.data import plans, services, user_lameness_detection_data, us
 app = FastAPI()
 
 
+# For demo purposes
+@app.get("/url_list")
+def get_all_urls():
+    url_list = [{"path": route.path, "name": route.name} for route in app.routes]
+    return url_list
+
+
 # Allow requests from the machine during development
 ncf = NetworkConfigFetcher()
 origins = []
