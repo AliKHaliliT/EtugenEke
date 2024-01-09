@@ -6,7 +6,7 @@ from fastapi.responses import FileResponse, Response
 # Configure logging
 logging.basicConfig(level=logging.DEBUG) 
 
-file_handler = logging.FileHandler(r'E:\Ongoing\Python\EtugenEke\logs\password_reset.log')
+file_handler = logging.FileHandler(r'logs\password_reset.log')
 file_handler.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -41,7 +41,7 @@ async def password_reset() -> FileResponse:
 
     try:
         logging.info("Fetching password reset page")
-        return FileResponse(r"E:\Ongoing\Python\EtugenEke\EtugenEke\assets\static\content\passwordReset.html")
+        return FileResponse(r"EtugenEke\assets\static\content\passwordReset.html")
     except Exception as e:
         logging.error(f"Error in fetching password reset page: {e}")
         return Response(status_code=500)

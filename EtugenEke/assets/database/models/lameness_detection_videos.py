@@ -6,7 +6,7 @@ from fastapi_storages.integrations.sqlalchemy import FileType
 
 
 Base = declarative_base()
-storage = FileSystemStorage(path="../uploads")
+storage = FileSystemStorage(path="uploads")
 
 class LamenessDetectionVideos(Base):
     __tablename__ = "LamenessDetectionVideo"

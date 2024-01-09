@@ -6,7 +6,7 @@ from fastapi.responses import FileResponse, Response
 # Configure logging
 logging.basicConfig(level=logging.DEBUG) 
 
-file_handler = logging.FileHandler(r'E:\Ongoing\Python\EtugenEke\logs\user_action.log')
+file_handler = logging.FileHandler(r'logs\user_action.log')
 file_handler.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -41,7 +41,7 @@ async def user_action() -> FileResponse:
 
     try:
         logging.info("Fetching user action page")
-        return FileResponse(r"E:\Ongoing\Python\EtugenEke\EtugenEke\assets\static\content\userAction.html")
+        return FileResponse(r"EtugenEke\assets\static\content\userAction.html")
     except Exception as e:
         logging.error(f"Error in fetching user action page: {e}")
         return Response(status_code=500)

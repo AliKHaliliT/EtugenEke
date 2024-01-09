@@ -15,7 +15,7 @@ from datetime import datetime
 # Configure logging
 logging.basicConfig(level=logging.DEBUG) 
 
-file_handler = logging.FileHandler(r'E:\Ongoing\Python\EtugenEke\logs\signup.log')
+file_handler = logging.FileHandler(r'logs\signup.log')
 file_handler.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')

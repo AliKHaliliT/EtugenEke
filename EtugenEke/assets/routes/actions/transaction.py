@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse, Response
 # Configure logging
 logging.basicConfig(level=logging.DEBUG) 
 
-file_handler = logging.FileHandler(r'E:\Ongoing\Python\EtugenEke\logs\transaction.log')
+file_handler = logging.FileHandler(r'logs\transaction.log')
 file_handler.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')

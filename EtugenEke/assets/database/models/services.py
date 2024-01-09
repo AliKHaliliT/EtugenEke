@@ -6,7 +6,7 @@ from fastapi_storages.integrations.sqlalchemy import FileType
 
 
 Base = declarative_base()
-storage = FileSystemStorage(path="../services")
+storage = FileSystemStorage(path="services")
 
 class Services(Base):
     __tablename__ = "Services"

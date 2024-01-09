@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 import smtplib
 
 
-config = load_conf(r"E:\Ongoing\Python\EtugenEke\configs\email\config.cfg")
+config = load_conf(r"configs\email\config.cfg")
 ncf = NetworkConfigFetcher()
 
 

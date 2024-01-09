@@ -11,7 +11,7 @@ from ...database.models.users import Users
 # Configure logging
 logging.basicConfig(level=logging.DEBUG) 
 
-file_handler = logging.FileHandler(r'E:\Ongoing\Python\EtugenEke\logs\reset_password.log')
+file_handler = logging.FileHandler(r'logs\reset_password.log')
 file_handler.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')

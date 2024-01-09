@@ -79,7 +79,7 @@ app.add_middleware(
 )
 
 
-app.mount("/static", StaticFiles(directory=r"E:\Ongoing\Python\EtugenEke\EtugenEke\assets\static"), name="static")
+app.mount("/static", StaticFiles(directory=r"EtugenEke\assets\static"), name="static")
 authentication_backend = AdminAuth(secret_key="EtugenEke")
 admin = Admin(app, engine, authentication_backend=authentication_backend, 
               title="EtugenEke Admin Panel")
