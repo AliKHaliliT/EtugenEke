@@ -81,7 +81,7 @@ The admin panel will look like below:
 </div>
 
 ### Test Endpoints
-In order to use the server, you must first define some data. It does not matter what you define as long as it is in the correct format. Thus, after accessing the admin panel, create atleast a plan and a service. Then, you can use the following python script to test the sign-up, login and forgot password endpoints:
+In order to use the server, you must first define some data. It does not matter what you define as long as it is in the correct format. Thus, after accessing the admin panel, create atleast a plan and a service. You can use the image in the `data\services` for the service image. Then, you can use the following python script to test the sign-up, login and forgot password endpoints:
 ```python
 import requests
 
