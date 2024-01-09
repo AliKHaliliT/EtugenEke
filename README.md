@@ -1,7 +1,7 @@
 # EtugenEke
-<p align="center">
+<div align="center">
   <img src="readme_assets\img\logo.jpeg" alt="EtugenEkeLogo" style="width:300px;height:300px;">
-</p>
+</div>
 
 A Server built using FastAPI for a part of my thesis.
 
@@ -18,8 +18,9 @@ The logo was created using [LeonardoAI](https://leonardo.ai). It was then polish
 The server contains unique token generation for password reset. Given a valid request is made to the `/actions/forgot_password/` endpoint, a token is generated and sent to the user's email. The token is then used to verify the user's identity when they get redirected to the `/pages/password_reset` endpoint by clicking the link in the email and opening the `/pages/user_action` endpoint. The `/pages/user_action` endpoint is also used to choose where to redirect the user based on the device they are using. If the user is on a mobile device, and has the coprrespounding app, [AkAna](https://github.com/AliKHaliliT/AkAna), installed, they will get redirected to the app using the DeepLinking Mechanism, and if they are on a desktop, they are redirected to the `/pages/password_reset` endpoint which contains a form to reset the password. The token is generated using python's `secrets` module. No time-based invalidation is used, instead, the token is invalidated once it is used to reset the password. So on a production scenario, the token should be invalidated after a certain amount of time. Also, other proper security measures should be taken into consideration instead of the one curretly used as this is just a simple dummy implementation.
 
 The reset password functionality on the desktop looks like below:
-
-<img src="readme_assets\img\resetPasswordFunc.gif" alt="passwordResetFunc.gif">
+<div align="center">
+  <img src="readme_assets\img\reset_password_func.gif" alt="passwordResetFunc.gif">
+</div>
 
 The sensitive information like passwords are hashed using [bcrypt](https://pypi.org/project/bcrypt/). However, the use of authentication headers is not implemented. Instead, the user's email and password are sent in the body of the request. In a production scenario, the use of authentication headers should be considered.
 
@@ -29,8 +30,15 @@ The code base is modularized and all of the endpoints are documented.
 To run the server, first install the dependencies using the following command:
 ```bash
 pip install -r requirements.txt
+
 ```
 
+In case the above command fails to install the required dependencies, you can try installing the dependencies of the whole environment using the following command:
+
+```bash
+pip install -r requirements_env.txt
+
+```
 ## Usage
 Then, run the following command:
 ```bash
@@ -67,6 +75,11 @@ that can view and edit admins:
 ```bash
 python init_root.py
 ```
+The admin panel will look like below:
+<div align="center">
+  <img src="readme_assets\img\admin_panel.png" alt="adminPanel.png">
+</div>
+
 ### Test Endpoints
 In order to use the server, you must first define some data. It does not matter what you define as long as it is in the correct format. Thus, after accessing the admin panel, create atleast a plan and a service. Then, you can use the following python script to test the sign-up, login and forgot password endpoints:
 ```python
@@ -143,50 +156,57 @@ The uploaded file will be available in the `uploads` folder.
 ## Structure
 The server contains the following endpoints:
 
-- static
+- Static files
   - /static
-- admin
+- Admin panel
   - /admin
-- signup
+- Signup a root user
   - /init_root/
-- signup
+- Signup an admin user
   - /init_admin/
-- signup
+- Signup a user
   - /actions/signup/
-- transaction
+- Transaction
   - /actions/transaction/
-- login
+- Login
   - /actions/login/
-- delete_account
+- Delete account
   - /actions/delete_account/
-- forgot_password
+- Forgot password
   - /actions/forgot_password/
-- reset_password
+- Reset password
   - /actions/reset_password/
-- upload_video
+- Inference
   - /actions/inference/
-- update_user_credentials
+- Update user credentials
   - /actions/update_user_credentials/
-- send_user_lameness_detection_data
+- Send user lameness detection data
   - /actions/send_user_lameness_detection_data/
-- update_credit
+- Update credit
   - /actions/update_credit/
-- update_recharged
+- Update recharged column for a user
   - /actions/update_recharged/
-- upload_video
+- Upload a video to the server for a user
   - /actions/upload_video/
-- user_action
+- Helper redirect endpoint
   - /pages/user_action
-- password_reset
+- Password reset page
   - /pages/password_reset
-- plans
+- Serve available plans to purchase
   - /data/plans/
-- services
+- Get available services for a plan and a user
   - /data/services/
-- user_lameness_detection_data
+- Get user lameness detection data
   - /data/user_lameness_detection_data/
-- user_info
+- Get user info
   - /data/user_info/
+
+## About
+I developed this server as a component of my master's thesis. The server is intended for a mobile app called AkAna.
+Regarding its name, In my native language, "Eke" means mother, while Etugen is also often referred to as "dayir" (meaning brown), and she is described as the Brown Skinned Mother Earth. Also her name may have originated from Ötüken, the holy mountain of the earth and fertility. Etugen existed in the middle of the Universe and the Turkic people viewed Etugen as the second highest deity ([From Wikipedia](https://en.wikipedia.org/wiki/Etugen_Eke)).
+
+## Frontend
+The frontend lives in the sister repository [AkAna](https://github.com/AliKHaliliT/AkAna).
 
 ## License
 This work is under an [MIT](https://choosealicense.com/licenses/mit/) License.
