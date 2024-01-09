@@ -116,9 +116,9 @@ def test_update_recharged():
 
 test_signup()
 
-# test_login()
+test_login()
 
-test_forgot_password()
+# test_forgot_password()
 
 # test_update_user_credentials()
 
