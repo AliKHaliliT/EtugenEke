@@ -29,6 +29,38 @@ for interface in ncf.fetch_network_config():
         ]
         break
 
+
+@app.middleware("http")
+async def x_content_type_options(request, call_next):
+
+    """
+    
+    This middleware adds the X-Content-Type-Options header to the response. This header prevents the browser from
+    MIME-sniffing a response away from the declared content-type. This reduces exposure to drive-by download attacks
+    and sites serving user uploaded content that could be treated as executable or dynamic HTML files.
+
+
+    Parameters
+    ----------
+    request: Request
+        The request object.
+
+    call_next: function
+        The next function to call.
+
+    
+    Returns
+    -------
+    response: Response
+        The response object.
+    
+    """
+
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    return response
+
+
 # Enable CORS for all routes
 app.add_middleware(
     CORSMiddleware,
@@ -36,6 +68,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],  # You can specify the HTTP methods you want to allow
     allow_headers=["*"],  # You can specify the HTTP headers you want to allow
+
 )
 
 
@@ -43,7 +76,6 @@ app.mount("/static", StaticFiles(directory=r"E:\Ongoing\Python\EtugenEke\EtugenE
 authentication_backend = AdminAuth(secret_key="EtugenEke")
 admin = Admin(app, engine, authentication_backend=authentication_backend, 
               title="EtugenEke Admin Panel")
-
 
 # Admin
 app.include_router(root_signup.router)
