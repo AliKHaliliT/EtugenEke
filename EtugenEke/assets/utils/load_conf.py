@@ -1,7 +1,7 @@
 from configparser import ConfigParser
 
 
-def load_conf(path: str = "config.cfg") -> dict[str, str]:
+def load_conf(path: str = "config.cfg") -> ConfigParser:
 
     """
     
@@ -27,9 +27,11 @@ def load_conf(path: str = "config.cfg") -> dict[str, str]:
     
 
     try:
-        with open(path) as config_file:
-            cfg = ConfigParser()
-            return cfg.read(config_file)
+        cfg = ConfigParser() 
+        cfg.read(path)
+
+
+        return cfg
     except Exception as e:
         print("Please create a valid config.cfg file. Cuurently, you are receiving the error:", e)
         exit()

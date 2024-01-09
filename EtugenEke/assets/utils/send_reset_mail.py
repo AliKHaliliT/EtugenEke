@@ -37,7 +37,7 @@ def send(email: str, reset_token: str) -> None:
     message = MIMEMultipart("alternative")
 
     message["Subject"] = "Password Reset"
-    message["From"] = config.get("email")
+    message["From"] = config.get("ResetMail", "email")
     message["To"] = email
 
     # This part is only for development purposes. You should add your own ip address here on production.
@@ -70,13 +70,12 @@ def send(email: str, reset_token: str) -> None:
     message.attach(part1)
     message.attach(part2)
 
-
     try:
         with smtplib.SMTP('smtp.gmail.com', 587) as server:
 
             server.starttls()
-            server.login(config.get("email"), config.get("password"))
-            server.sendmail(config.get("email"), email, message.as_string())
+            server.login(config.get("ResetMail", "email"), config.get("ResetMail", "password"))
+            server.sendmail(config.get("ResetMail", "email"), email, message.as_string())
 
     except Exception as e:
         print(f"Error in send: {e}")

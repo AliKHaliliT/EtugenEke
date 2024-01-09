@@ -15,7 +15,7 @@ const getAnimationDuration = (element) => {
 // Wait for the checkmark__check animation to end
 checkmarkCheck.addEventListener("animationend", () => {
   // A little delay for better user experience
-  const animationDuration = getAnimationDuration(this);
+  const animationDuration = getAnimationDuration(checkmarkCheck);
   setTimeout(() => {
       window.parent.postMessage("animationComplete", '*');
   }, animationDuration);

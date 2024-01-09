@@ -118,13 +118,13 @@ test_signup()
 
 # test_login()
 
-# test_forgot_password()
+test_forgot_password()
 
 # test_update_user_credentials()
 
 # test_delete_account()
 
-test_send_user_lameness_detection_data()
+# test_send_user_lameness_detection_data()
 
 # test_user_lameness_detection_data()
 
