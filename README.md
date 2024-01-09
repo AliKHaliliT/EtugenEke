@@ -136,7 +136,9 @@ The srever also supports video upload. To test the video upload functionality, y
 ```python
 import requests
 
-url = "http://127.0.0.1:8000/actions/inference/"  # Replace with your FastAPI endpoint URL
+
+url = "http://localhost:8000/actions/inference/"
+
 
 credentials = {
     "username_or_email": "canislupus",
@@ -144,10 +146,11 @@ credentials = {
     "service_type": "the_service_type_that_you_defined_in_the_admin_panel",
 }
 
-files = {'file': open(r'util_resources\video\test_video.mp4', 'rb')}  # Replace with your video file path
+files = {'file': open(r'util_resources\video\test_video.mp4', 'rb')}
 
-# Send credentials and files separately
+
 response = requests.post(url, data=credentials, files=files)
+
 
 print(response.text)
 ```
