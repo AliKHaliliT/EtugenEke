@@ -25,22 +25,120 @@ The sensitive information like passwords are hashed using [bcrypt](https://pypi.
 
 The code base is modularized and all of the endpoints are documented.
 
-## Usage
+## Installation
 To run the server, first install the dependencies using the following command:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Usage
 Then, run the following command:
 ```bash
-uvicorn server:app --reload
+uvicorn EtugenEke:app --reload
 ```
 The server will be running on `http://localhost:8000`.
 
-To access the admin panel, go to `http://localhost:8000/admin`.
-
 In order to broadcast the server to the local network, run the following command:
 ```bash
-uvicorn server:app --reload --host 
+uvicorn EtugenEke:app --reload --host 0.0.0.0 --port 8000
+```
+
+When running the server on the broadcast mode on a local network, the server can be accessed from other devices on the network using the IP address of the device running the server and the port number. To facilitate the process of setting the IP address of the device running the server, on the server side, the `EtugenEke\assets\utils\get_machine_ip.py` automatically sets the most suitable IP address for the server. However, if the server is unresponsive, you might need to manually set the IP address of the device running the server in the `EtugenEke\assets\utils\get_machine_ip.py` file to statically reflect the IP address of the device running the server. The script supports both linux and windows. The slight delay on server start and reload is due to the script running on the background to set the IP address of the device running the server.
+
+### Superuser
+
+To access the admin panel, you need to create a superuser. To do so, run the sever and then run the following command which will create an admin user with credentials:
+```
+username: admin
+password: admin
+```
+ that can access the admin panel:
+```bash
+python init_admin.py
+```
+Then, you can access the admin panel on `http://localhost:8000/admin`.
+
+The admin has access to everything but can not view or edit himself or other admins. You can use the following command to create a root user with the following credentials:
+```
+username: root
+password: root
+```
+that can view and edit admins:
+```bash
+python init_root.py
+```
+### Test Endpoints
+In order to use the server, you must first define some data. It does not matter what you define as long as it is in the correct format. Thus, after accessing the admin panel, create atleast a plan and a service. Then, you can use the following python script to test the sign-up, login and forgot password endpoints:
+```python
+import requests
+
+
+BASE_URL = "http://localhost:8000"
+BASE_URL_ACTIONS = f"{BASE_URL}/actions"
+BASE_URL_PAGES = f"{BASE_URL}/pages"
+BASE_URL_ASSETS = f"{BASE_URL}/assets"
+BASE_URL_DATA = f"{BASE_URL}/data"
+
+
+signup_data = {
+    "first_name": "Canis",
+    "last_name": "Canis",
+    "username": "canislupus",
+    "email": "canis.lupus@example.com",
+    "password": "canis",
+    "plan": "Free",
+}
+
+login_data = {
+    "username_or_email": "canislupus",
+    "password": "secretpassword"
+}
+
+forgot_password_data = {
+    "username_or_email": "canislupus"
+}
+
+
+def test_signup():
+    response = requests.post(f"{BASE_URL_ACTIONS}/signup/", json=signup_data)
+    print(response.json())
+
+def test_login():
+    response = requests.post(f"{BASE_URL_ACTIONS}/login/", json=login_data)
+    print(response.json())
+
+def test_forgot_password():
+    response = requests.post(f"{BASE_URL_ACTIONS}/forgot_password/", json=forgot_password_data)
+    print(response.json())
+
+
+test_signup()
+
+test_login()
+
+test_forgot_password()
+```
+
+The srever also supports video upload. To test the video upload functionality, you can use the following python script:
+```python
+import requests
+
+url = "http://127.0.0.1:8000/actions/inference/"  # Replace with your FastAPI endpoint URL
+
+credentials = {
+    "username_or_email": "canislupus",
+    "password": "canislupus",
+    "service_type": "the_service_type_that_you_defined_in_the_admin_panel",
+}
+
+files = {'file': open(r'util_resources\video\test_video.mp4', 'rb')}  # Replace with your video file path
+
+# Send credentials and files separately
+response = requests.post(url, data=credentials, files=files)
+
+print(response.text)
+```
+The uploaded file will be available in the `uploads` folder.
 
 ## Structure
 The server contains the following endpoints:
