@@ -1,9 +1,9 @@
 import logging
 from fastapi import APIRouter
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.admin import Admin
-from assets.database.models.admins import Admins
+from ...database.db.etugeneke_db import engine
+from ...models.admin import Admin
+from ...database.models.admins import Admins
 from fastapi.responses import JSONResponse, Response
 import dns.resolver
 import bcrypt

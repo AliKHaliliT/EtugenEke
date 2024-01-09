@@ -1,10 +1,10 @@
 from sqladmin import ModelView
-from assets.database.models.users import Users
-from assets.database.models.lameness_detection_data import LamenessDetectionData
-from assets.database.models.lameness_detection_videos import LamenessDetectionVideos
-from assets.database.models.services import Services
-from assets.database.models.plans import Plans
-from assets.database.models.admins import Admins
+from ...database.models.users import Users
+from ...database.models.lameness_detection_data import LamenessDetectionData
+from ...database.models.lameness_detection_videos import LamenessDetectionVideos
+from ...database.models.services import Services
+from ...database.models.plans import Plans
+from ...database.models.admins import Admins
 from starlette.requests import Request
 
 

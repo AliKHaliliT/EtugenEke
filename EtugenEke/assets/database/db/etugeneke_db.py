@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
-from assets.database.models.admins import Base as AdminsBase
-from assets.database.models.users import Base as UsersBase
-from assets.database.models.lameness_detection_data import Base as LamenessDetectionBase
-from assets.database.models.lameness_detection_videos import Base as LamenessDetectionVideosBase
-from assets.database.models.services import Base as ServicesBase
-from assets.database.models.plans import Base as PlansBase
+from ...database.models.admins import Base as AdminsBase
+from ...database.models.users import Base as UsersBase
+from ...database.models.lameness_detection_data import Base as LamenessDetectionBase
+from ...database.models.lameness_detection_videos import Base as LamenessDetectionVideosBase
+from ...database.models.services import Base as ServicesBase
+from ...database.models.plans import Base as PlansBase
 
 
 # Create the SQLite engine

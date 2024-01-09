@@ -1,11 +1,11 @@
 import logging
 from fastapi import APIRouter
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.forgot_password import ForgotPassword
-from assets.database.models.users import Users
-from assets.utils.generate_reset_token import generate
-from assets.utils.send_reset_mail import send
+from ...database.db.etugeneke_db import engine
+from ...models.forgot_password import ForgotPassword
+from ...database.models.users import Users
+from ...utils.generate_reset_token import generate
+from ...utils.send_reset_mail import send
 from fastapi.responses import JSONResponse, Response
 
 

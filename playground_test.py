@@ -5,7 +5,7 @@
 # cfg.read(r"configs\email\config.cfg")
 # print(type(cfg.get("ResetMail", "email")))
 
-from EtugenEke.assets.utils.load_conf import load_conf
+from EtugenEke....utils.load_conf import load_conf
 
 
 config = load_conf(r"E:\Ongoing\Python\EtugenEke\configs\email\config.cfg")

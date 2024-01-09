@@ -1,8 +1,8 @@
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
+from ...database.db.etugeneke_db import engine
 from sqladmin.authentication import AuthenticationBackend
 from starlette.requests import Request
-from assets.database.models.admins import Admins
+from ...database.models.admins import Admins
 import bcrypt
 
 

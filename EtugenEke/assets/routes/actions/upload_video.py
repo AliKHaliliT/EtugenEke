@@ -1,10 +1,10 @@
 import logging
 from fastapi import APIRouter, Form, File
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.upload_video import UploadVideo
-from assets.database.models.users import Users
-from assets.database.models.lameness_detection_videos import LamenessDetectionVideos
+from ...database.db.etugeneke_db import engine
+from ...models.upload_video import UploadVideo
+from ...database.models.users import Users
+from ...database.models.lameness_detection_videos import LamenessDetectionVideos
 from fastapi.responses import JSONResponse, Response
 import os
 from datetime import datetime

@@ -1,18 +1,18 @@
 from fastapi import FastAPI
-from assets.utils.get_machine_ip import NetworkConfigFetcher
+from .assets.utils.get_machine_ip import NetworkConfigFetcher
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from sqladmin import Admin
-from assets.routes.root import signup as root_signup
-from assets.routes.admin import signup as admin_signup
-from assets.routes.admin.admin_auth import AdminAuth
-from assets.database.db.etugeneke_db import engine
-from assets.routes.admin.admin_panel import Users, LamenessDetection, LamenessDetectionVideos, Services, Plans, Admins
-from assets.routes.actions import signup, transaction, login, delete_account, forgot_password, reset_password, \
-                                  inference, update_user_credentials, send_user_lameness_detection_data, update_credit, update_recharged, \
-                                  upload_video
-from assets.routes.pages import user_action, password_reset
-from assets.routes.data import plans, services, user_lameness_detection_data, user_info
+from .assets.routes.root import signup as root_signup
+from .assets.routes.admin import signup as admin_signup
+from .assets.routes.admin.admin_auth import AdminAuth
+from .assets.database.db.etugeneke_db import engine
+from .assets.routes.admin.admin_panel import Users, LamenessDetection, LamenessDetectionVideos, Services, Plans, Admins
+from .assets.routes.actions import signup, transaction, login, delete_account, forgot_password, reset_password, \
+                                   inference, update_user_credentials, send_user_lameness_detection_data, update_credit, update_recharged, \
+                                   upload_video
+from .assets.routes.pages import user_action, password_reset
+from .assets.routes.data import plans, services, user_lameness_detection_data, user_info
 
 
 app = FastAPI()

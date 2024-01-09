@@ -1,12 +1,12 @@
 import logging
 from fastapi import APIRouter
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.user import User
-from assets.database.models.users import Users
-from assets.database.models.plans import Plans
+from ...database.db.etugeneke_db import engine
+from ...models.user import User
+from ...database.models.users import Users
+from ...database.models.plans import Plans
 from fastapi.responses import JSONResponse, Response
-from assets.utils.is_valid_email import is_valid_email
+from ...utils.is_valid_email import is_valid_email
 import dns.resolver
 import bcrypt
 from datetime import datetime

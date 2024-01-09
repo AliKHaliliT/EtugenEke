@@ -1,11 +1,11 @@
 import logging
 from fastapi import APIRouter
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.auth import Auth
-from assets.models.update_credit import UpdateCredit
+from ...database.db.etugeneke_db import engine
+from ...models.auth import Auth
+from ...models.update_credit import UpdateCredit
 from fastapi.responses import JSONResponse, Response
-from assets.database.models.users import Users
+from ...database.models.users import Users
 import bcrypt
 
 

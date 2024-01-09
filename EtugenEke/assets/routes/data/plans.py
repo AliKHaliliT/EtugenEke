@@ -2,8 +2,8 @@
 import logging
 from fastapi import APIRouter
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.database.models.plans import Plans
+from ...database.db.etugeneke_db import engine
+from ...database.models.plans import Plans
 from fastapi.responses import JSONResponse, Response
 
 

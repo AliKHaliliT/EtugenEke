@@ -8,8 +8,8 @@ copilotPrompts.txt
 uploads/
 raw_assets/
 logs/
-EtugenEke/EtugenEke.db
 configs/email/config.cfg
+*.db
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

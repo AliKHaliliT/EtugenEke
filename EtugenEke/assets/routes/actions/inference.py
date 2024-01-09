@@ -1,12 +1,12 @@
 import logging
 from fastapi import APIRouter, Form, File
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.auth import Auth
-from assets.models.inference import Inference
-from assets.database.models.users import Users
-from assets.database.models.plans import Plans
-from assets.database.models.lameness_detection_videos import LamenessDetectionVideos
+from ...database.db.etugeneke_db import engine
+from ...models.auth import Auth
+from ...models.inference import Inference
+from ...database.models.users import Users
+from ...database.models.plans import Plans
+from ...database.models.lameness_detection_videos import LamenessDetectionVideos
 import bcrypt
 from fastapi.responses import JSONResponse, Response
 import os

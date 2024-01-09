@@ -1,14 +1,14 @@
 import logging
 from fastapi import APIRouter
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.auth import Auth
-from assets.database.models.users import Users
-from assets.database.models.plans import Plans
-from assets.database.models.services import Services
+from ...database.db.etugeneke_db import engine
+from ...models.auth import Auth
+from ...database.models.users import Users
+from ...database.models.plans import Plans
+from ...database.models.services import Services
 import bcrypt
 from fastapi.responses import JSONResponse, Response
-from assets.utils.image_to_b64 import tob64
+from ...utils.image_to_b64 import tob64
 
 
 # Configure logging

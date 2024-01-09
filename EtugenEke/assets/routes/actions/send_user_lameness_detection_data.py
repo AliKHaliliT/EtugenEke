@@ -1,11 +1,11 @@
 import logging
 from fastapi import APIRouter
 from sqlalchemy.orm import sessionmaker
-from assets.database.db.etugeneke_db import engine
-from assets.models.auth import Auth
-from assets.models.lameness_detection_data import LamenessDetectionData
-from assets.routes.actions.login import login
-from assets.database.models.lameness_detection_data import LamenessDetectionData as LMDDB
+from ...database.db.etugeneke_db import engine
+from ...models.auth import Auth
+from ...models.lameness_detection_data import LamenessDetectionData
+from ...routes.actions.login import login
+from ...database.models.lameness_detection_data import LamenessDetectionData as LMDDB
 from fastapi.responses import JSONResponse, Response
 
 
