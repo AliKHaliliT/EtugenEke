@@ -15,6 +15,8 @@ The logo was created using [LeonardoAI](https://leonardo.ai). It was then polish
 - The admin panel is built using [SQLAlchemy Admin](https://github.com/aminalaee/sqladmin).
 - Data is validated using [Pydantic](https://pydantic-docs.helpmanual.io/).
 
+The servers uses Python's [logging](https://docs.python.org/3/library/logging.html) module for logging. The logs are stored in the `logs` folder.
+
 The server contains unique token generation for password reset. Given a valid request is made to the `/actions/forgot_password/` endpoint, a token is generated and sent to the user's email. The token is then used to verify the user's identity when they get redirected to the `/pages/password_reset` endpoint by clicking the link in the email and opening the `/pages/user_action` endpoint. The `/pages/user_action` endpoint is also used to choose where to redirect the user based on the device they are using. If the user is on a mobile device, and has the coprrespounding app, [AkAna](https://github.com/AliKHaliliT/AkAna), installed, they will get redirected to the app using the DeepLinking Mechanism, and if they are on a desktop, they are redirected to the `/pages/password_reset` endpoint which contains a form to reset the password. The token is generated using python's `secrets` module. No time-based invalidation is used, instead, the token is invalidated once it is used to reset the password. So on a production scenario, the token should be invalidated after a certain amount of time. Also, other proper security measures should be taken into consideration instead of the one curretly used as this is just a simple dummy implementation.
 
 The reset password functionality on the desktop looks like below:
@@ -27,6 +29,9 @@ The sensitive information like passwords are hashed using [bcrypt](https://pypi.
 The code base is modularized and all of the endpoints are documented.
 
 ## Installation
+
+The server is developed using `python==3.12.0`.
+
 To run the server, first install the dependencies using the following command:
 ```bash
 pip install -r requirements.txt
