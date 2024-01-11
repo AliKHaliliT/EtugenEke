@@ -89,10 +89,10 @@ class Admins(ModelView, model=Admins):
 
     name = "Admin"
     icon = "fas fa-user-shield"
-    column_list = ["id", "date_created", "first_name", "last_name", "username", "email", "password"]
+    column_list = ["id", "date_created", "role", "first_name", "last_name", "username", "email", "password"]
     column_default_sort = ("id", True)
-    column_sortable_list = ["id", "date_created", "first_name", "last_name", "username", "email", "password"]
-    column_searchable_list = ["id", "date_created", "first_name", "last_name", "username", "email", "password"]
+    column_sortable_list = ["id", "date_created", "role", "first_name", "last_name", "username", "email", "password"]
+    column_searchable_list = ["id", "date_created", "role", "first_name", "last_name", "username", "email", "password"]
     column_formatters = {Admins.first_name: lambda m, a: m.first_name[:10] + "..." if len(m.first_name) > 10 else m.first_name, 
                          Admins.last_name: lambda m, a: m.last_name[:10] + "..." if len(m.last_name) > 10 else m.last_name,
                          Admins.username: lambda m, a: m.username[:10] + "..." if len(m.username) > 10 else m.username,
