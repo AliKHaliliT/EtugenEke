@@ -109,7 +109,7 @@ signup_data = {
 
 login_data = {
     "username_or_email": "canislupus",
-    "password": "secretpassword"
+    "password": "canis"
 }
 
 forgot_password_data = {
@@ -147,7 +147,7 @@ url = "http://localhost:8000/actions/inference/"
 
 credentials = {
     "username_or_email": "canislupus",
-    "password": "canislupus",
+    "password": "canis",
     "service_type": "the_service_type_that_you_defined_in_the_admin_panel",
 }
 
