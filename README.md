@@ -29,6 +29,14 @@ The sensitive information like passwords are hashed using [bcrypt](https://pypi.
 The code base is modularized and all of the endpoints are documented.
 
 ## Installation
+First, clone the repository using the following command:
+```bash
+git clone https://github.com/AliKHaliliT/EtugenEke
+```
+Then, navigate to the repository:
+```bash
+cd EtugenEke
+```
 
 The server is developed using `python==3.12.0`.
 
