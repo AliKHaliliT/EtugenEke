@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import os
 from .assets.utils.get_machine_ip import NetworkConfigFetcher
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -16,6 +17,11 @@ from .assets.routes.data import plans, services, user_lameness_detection_data, u
 
 
 app = FastAPI()
+
+
+# If logs folder does not exist, create it
+if not os.path.exists("logs"):
+    os.makedirs("logs")
 
 
 # For demo purposes
