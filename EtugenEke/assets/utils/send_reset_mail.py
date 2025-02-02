@@ -20,6 +20,9 @@ def send(email: str, reset_token: str) -> None:
     -----------
     email : str
         The user's email address.
+    
+    reset_token : str
+        The reset token.
 
 
     Returns:

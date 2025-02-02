@@ -5,18 +5,19 @@ def load_conf(path: str = "config.cfg") -> ConfigParser:
 
     """
     
-    Load configuration from config.cfg
+    Load configuration from `config.cfg`
 
     
     Parameters
     ----------
-    None.
+    path : str
+        Path to the configuration file. The default value is `config.cfg`
 
 
     Returns
     -------
     config : dict
-        Configuration from config.cfg
+        Configuration from `config.cfg`
 
     """
 

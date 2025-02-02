@@ -10,6 +10,12 @@ class NetworkConfigFetcher:
     This class is used to fetch the network configuration of the machine.
     It returns a list of dictionaries containing the interface alias, ip address and gateway, 
     for each interface that has an ip address and a gateway.
+
+    
+    Methods
+    -------
+    fetch_network_config():
+        Fetches the network configuration of the machine.
     
     """
 
