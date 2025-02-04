@@ -1,12 +1,13 @@
-![License](https://img.shields.io/github/license/AliKHaliliT/EtugenEke)
-![Last Commit](https://img.shields.io/github/last-commit/AliKHaliliT/EtugenEke)
-![Open Issues](https://img.shields.io/github/issues/AliKHaliliT/EtugenEke)
-![Contributors](https://img.shields.io/github/contributors/AliKHaliliT/EtugenEke)
-![Stars](https://img.shields.io/github/stars/AliKHaliliT/EtugenEke)
-![Forks](https://img.shields.io/github/forks/AliKHaliliT/EtugenEke)
-
-
 # EtugenEke
+<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; align-items: center;">
+    <img src="https://img.shields.io/github/license/AliKHaliliT/EtugenEke" alt="License">
+    <img src="https://img.shields.io/github/last-commit/AliKHaliliT/EtugenEke" alt="Last Commit">
+    <img src="https://img.shields.io/github/issues/AliKHaliliT/EtugenEke" alt="Open Issues">
+    <img src="https://img.shields.io/github/contributors/AliKHaliliT/EtugenEke" alt="Contributors">
+    <img src="https://img.shields.io/github/stars/AliKHaliliT/EtugenEke" alt="Stars">
+    <img src="https://img.shields.io/github/forks/AliKHaliliT/EtugenEke" alt="Forks">
+</div>
+<br/>
 <div align="center">
   <img src="util_resources/readme/logo.jpeg" alt="EtugenEkeLogo" style="width:300px;height:300px;">
 </div>
