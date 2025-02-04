@@ -1,5 +1,5 @@
 # EtugenEke
-<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; align-items: center;">
+<div align="center" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
     <img src="https://img.shields.io/github/license/AliKHaliliT/EtugenEke" alt="License">
     <img src="https://img.shields.io/github/last-commit/AliKHaliliT/EtugenEke" alt="Last Commit">
     <img src="https://img.shields.io/github/issues/AliKHaliliT/EtugenEke" alt="Open Issues">
