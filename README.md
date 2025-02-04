@@ -3,7 +3,6 @@
     <img src="https://img.shields.io/github/license/AliKHaliliT/EtugenEke" alt="License">
     <img src="https://img.shields.io/github/last-commit/AliKHaliliT/EtugenEke" alt="Last Commit">
     <img src="https://img.shields.io/github/issues/AliKHaliliT/EtugenEke" alt="Open Issues">
-    <img src="https://img.shields.io/github/contributors/AliKHaliliT/EtugenEke" alt="Contributors">
     <img src="https://img.shields.io/github/stars/AliKHaliliT/EtugenEke" alt="Stars">
     <img src="https://img.shields.io/github/forks/AliKHaliliT/EtugenEke" alt="Forks">
 </div>
