@@ -1,3 +1,11 @@
+![License](https://img.shields.io/github/license/AliKHaliliT/EtugenEke)
+![Last Commit](https://img.shields.io/github/last-commit/AliKHaliliT/EtugenEke)
+![Open Issues](https://img.shields.io/github/issues/AliKHaliliT/EtugenEke)
+![Contributors](https://img.shields.io/github/contributors/AliKHaliliT/EtugenEke)
+![Stars](https://img.shields.io/github/stars/AliKHaliliT/EtugenEke)
+![Forks](https://img.shields.io/github/forks/AliKHaliliT/EtugenEke)
+
+
 # EtugenEke
 <div align="center">
   <img src="util_resources/readme/logo.jpeg" alt="EtugenEkeLogo" style="width:300px;height:300px;">
