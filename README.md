@@ -10,7 +10,7 @@
 <div align="center">
   <img src="util_resources/readme/logo.jpeg" alt="EtugenEkeLogo" style="width:300px;height:300px;">
 </div>
-
+<br/>
 A Server built using FastAPI for a part of my thesis.
 
 The logo was created using [LeonardoAI](https://leonardo.ai). It was then polished and enhanced with [UpscaleMedia](https://upscale.media).
